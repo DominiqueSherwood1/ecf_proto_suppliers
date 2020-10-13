@@ -1,0 +1,558 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  School results | Early Career Framework
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {{ govukBackLink({
+    text: "Back to Dashboard",
+    href: "../dashboard_sup"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Search results</h1>
+      <h3 class="govuk-heading-s">We've found 85 schools</h3>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h4 class="govuk-heading-s">Create bulk invite</h4>
+      <p>Create an invite list from the search and filter results shown on this page</p>
+      {{ govukButton({text: "Create invite list", href: "./refine_list_search"}) }}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <h4 class="govuk-heading-s">Filter results</h4>
+        {{ govukCheckboxes({
+          fieldset: {
+            legend: {
+              text: "Registration status",
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          classes: "govuk-checkboxes--small",
+          items: [
+            {
+              value: "Not yet registered",
+              text: "Not yet registered"
+            },
+            {
+              value: "School is registered but has no invites",
+              text: "School is registered but has no invites"
+            },
+            {
+              value: "School not responded to any providers",
+              text: "School not responded to any providers"
+            },
+            {
+              value: "School has responded to other providers",
+              text: "School has responded to other providers"
+            }
+          ]
+        }) }}
+
+        {{ govukCheckboxes({
+          fieldset: {
+            legend: {
+              text: "Characteristics",
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          classes: "govuk-checkboxes--small",
+          items: [
+            {
+              value: "Pupil premium above 40%",
+              text: "Pupil premium above 40%"
+            },
+            {
+              value: "School in a remote area",
+              text: "School in a remote area"
+            }
+
+          ]
+        }) }}
+
+
+        {{ govukCheckboxes({
+          fieldset: {
+            legend: {
+              text: "Phase",
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          classes: "govuk-checkboxes--small",
+          items: [
+            {
+              value: "Nursery",
+              text: "Nursery"
+            },
+            {
+              value: "Primary",
+              text: "Primary"
+            },
+            {
+              value: "Secondary",
+              text: "Secondary"
+            },
+            {
+              value: "Middle",
+              text: "Middle"
+            },
+            {
+              value: "Sixth form and FE",
+              text: "Sixth form and FE"
+            }
+          ]
+        }) }}
+
+        {{ govukCheckboxes({
+          fieldset: {
+            legend: {
+              text: "Type of school",
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          classes: "govuk-checkboxes--small",
+          items: [
+            {
+              value: "Academy",
+              text: "Academy"
+            },
+            {
+              value: "Maintained",
+              text: "Maintained"
+            },
+            {
+              value: "Free school",
+              text: "Free school"
+            },
+            {
+              value: "Special",
+              text: "Special"
+            },
+            {
+              value: "Other",
+              text: "Other"
+            }
+          ]
+        }) }}
+
+
+
+        {{ govukButton({text: "Update results", href: "./results_updated"}) }}
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+
+<!--School 1-->
+
+      <h4 class="govuk-heading-m">Corfe Hills School</h4>
+      <p>Higher Blandford Road, Broadstone, Dorset,BH18 9BG</p>
+      <p>URN: 136574, DfE number: 839/5410</p>
+      <p>Local authority: Bournemouth, Christchurch and Poole
+      <p>ECF Status: <strong class="govuk-tag govuk-tag--grey">Not yet registered</strong></p>
+      <p>Secondary</p>
+      <p>Academy converter</p>
+
+      {{ govukButton({text: "Invite school", href: "./assign"}) }}
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h4 class="govuk-heading-m">Corfe Hills School</h4>
+      <p>Higher Blandford Road, Broadstone, Dorset,BH18 9BG<br>
+      URN: 136574, DfE number: 839/5410 <br>
+      Local authority: Bournemouth, Christchurch and Poole<br>
+      ECF Status: <strong class="govuk-tag govuk-tag--grey">Not yet registered</strong><br>
+      Secondary<br>
+      Academy converter</p>
+
+      {{ govukButton({text: "Invite school", href: "./assign"}) }}
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <!--School 2-->
+
+            <h4 class="govuk-heading-m">Avonbourne Boys' Academy</h4>
+            <p>Harewood Avenue, Bournemouth, Dorset, BH7 6NZ</p>
+            <p>URN: 136574, DfE number: 839/5410</p>
+            <p>Local authority: Bournemouth, Christchurch and Poole
+            <p>ECF Status: <strong class="govuk-tag govuk-tag--red">Responded to others</strong></p>
+            <p>Secondary</p>
+            <p>Academy converter</p>
+
+            {{ govukButton({text: "Invite school", href: "./assign"}) }}
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+      <!--School 3-->
+
+            <h4 class="govuk-heading-m">St. Aldhelm's Academy</h4>
+            <p>Herbert Avenue, Poole, Dorset, BH12 4HS</p>
+            <p>URN: 136574, DfE number: 839/5410</p>
+            <p>Local authority: Bournemouth, Christchurch and Poole
+            <p>ECF Status: <strong class="govuk-tag govuk-tag--yellow">Not responded to any</strong></p>
+            <p>Pupil premium above 40%</p>
+            <p>Secondary</p>
+            <p>Academy converter</p>
+
+            {{ govukButton({text: "Invite school", href: "./assign"}) }}
+            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+            <div>
+              <h4 class="govuk-heading-m">
+                St. Aldhelm's Academy
+              </h4>
+
+              {{ govukSummaryList({
+                classes: 'govuk-summary-list--no-border',
+                rows: [
+                  {
+                    key: {text: "Address"},
+                    value: {html: "Herbert Avenue, Poole, Dorset, <br/>BH12 4HS"}
+                  },
+                  {
+                    key: {text: "Local authority"},
+                    value: {text: "Bournemouth, Christchurch and Poole (839)"}
+                  },
+                  {
+                    key: {text: "ID"},
+                    value: {html: "<abbr title=\"Unique Reference Number\">URN</abbr>: 136574, DfE number: 839/5410<br><abbr title=\"UK Provider Reference Number\">UKPRN</abbr>: 10033260"}
+                  },
+                  {
+                    key: {html: '<abbr title="Early Career Framework">ECF</abbr> Status'},
+                    value: {html: govukTag({text: "Not responded to any", classes: "govuk-tag--yellow"})}
+                  },
+                  {
+                    key: {text: "Characteristics"},
+                    value: {text: "Pupil premium above 40% "}
+                  },
+                  {
+                    key: {text: "Phase of education"},
+                    value: {text: "Secondary"}
+                  },
+                  {
+                    key: {text: "Type of school"},
+                    value: {text: "Academy converter"}
+                  }
+
+                ]
+                }) }}
+              {{ govukButton({text: "Invite school", href: "./assign"}) }}
+              <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            </div>
+
+
+
+
+<!--School 1-->
+
+      <div>
+        <h4 class="govuk-heading-m">
+          Corfe Hills School
+        </h4>
+
+        {{ govukSummaryList({
+          classes: 'govuk-summary-list--no-border',
+          rows: [
+            {
+              key: {text: "Address"},
+              value: {html: "Higher Blandford Road, Broadstone, Dorset, <br/>BH18 9BG"}
+            },
+            {
+              key: {text: "Local authority"},
+              value: {text: "Bournemouth, Christchurch and Poole (839)"}
+            },
+            {
+              key: {text: "ID"},
+              value: {html: "<abbr title=\"Unique Reference Number\">URN</abbr>: 136574, DfE number: 839/5410<br><abbr title=\"UK Provider Reference Number\">UKPRN</abbr>: 10033260"}
+            },
+            {
+              key: {html: '<abbr title="Early Career Framework">ECF</abbr> Status'},
+              value: {html: govukTag({text: "Not yet registered", classes: "govuk-tag--grey"})}
+            },
+            {
+              key: {text: "Characteristics"},
+              value: {text: "None"}
+            },
+            {
+              key: {text: "Phase of education"},
+              value: {text: "Secondary"}
+            },
+            {
+              key: {text: "Type of school"},
+              value: {text: "Academy converter"}
+            }
+
+          ]
+          }) }}
+        {{ govukButton({text: "Invite school", href: "./assign"}) }}
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      </div>
+
+
+
+<!--School 2-->
+
+<div>
+  <h4 class="govuk-heading-m">
+    Avonbourne Boys' Academy
+  </h4>
+
+  {{ govukSummaryList({
+    classes: 'govuk-summary-list--no-border',
+    rows: [
+      {
+        key: {text: "Address"},
+        value: {html: "Harewood Avenue, Bournemouth, Dorset, <br/>BH7 6NZ"}
+      },
+      {
+        key: {text: "Local authority"},
+        value: {text: "Bournemouth, Christchurch and Poole (839)"}
+      },
+      {
+        key: {text: "ID"},
+        value: {html: "<abbr title=\"Unique Reference Number\">URN</abbr>: 136574, DfE number: 839/5410<br><abbr title=\"UK Provider Reference Number\">UKPRN</abbr>: 10033260"}
+      },
+      {
+        key: {html: '<abbr title="Early Career Framework">ECF</abbr> Status'},
+        value: {html: govukTag({text: "Responded to others", classes: "govuk-tag--red"})}
+      },
+      {
+        key: {text: "Characteristics"},
+        value: {text: "None"}
+      },
+      {
+        key: {text: "Phase of education"},
+        value: {text: "Secondary"}
+      },
+      {
+        key: {text: "Type of school"},
+        value: {text: "Academy converter"}
+      }
+
+    ]
+    }) }}
+  {{ govukButton({text: "Invite school", href: "./assign"}) }}
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+</div>
+
+
+<!--School 3-->
+
+<div>
+  <h4 class="govuk-heading-m">
+    St. Aldhelm's Academy
+  </h4>
+
+  {{ govukSummaryList({
+    classes: 'govuk-summary-list--no-border',
+    rows: [
+      {
+        key: {text: "Address"},
+        value: {html: "Herbert Avenue, Poole, Dorset, <br/>BH12 4HS"}
+      },
+      {
+        key: {text: "Local authority"},
+        value: {text: "Bournemouth, Christchurch and Poole (839)"}
+      },
+      {
+        key: {text: "ID"},
+        value: {html: "<abbr title=\"Unique Reference Number\">URN</abbr>: 136574, DfE number: 839/5410<br><abbr title=\"UK Provider Reference Number\">UKPRN</abbr>: 10033260"}
+      },
+      {
+        key: {html: '<abbr title="Early Career Framework">ECF</abbr> Status'},
+        value: {html: govukTag({text: "Not responded to any", classes: "govuk-tag--yellow"})}
+      },
+      {
+        key: {text: "Characteristics"},
+        value: {text: "Pupil premium above 40% "}
+      },
+      {
+        key: {text: "Phase of education"},
+        value: {text: "Secondary"}
+      },
+      {
+        key: {text: "Type of school"},
+        value: {text: "Academy converter"}
+      }
+
+    ]
+    }) }}
+  {{ govukButton({text: "Invite school", href: "./assign"}) }}
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+</div>
+
+<!--School 4-->
+
+<div>
+  <h4 class="govuk-heading-m">
+    Rushcome First School
+  </h4>
+
+  {{ govukSummaryList({
+    classes: 'govuk-summary-list--no-border',
+    rows: [
+      {
+        key: {text: "Address"},
+        value: {html: "Hanham Road, Corfe Mullen, Wimborne, Dorset, <br/>BH21 3PX"}
+      },
+      {
+        key: {text: "Local authority"},
+        value: {text: "Bournemouth, Christchurch and Poole (839)"}
+      },
+      {
+        key: {text: "ID"},
+        value: {html: "<abbr title=\"Unique Reference Number\">URN</abbr>: 136574, DfE number: 839/5410<br><abbr title=\"UK Provider Reference Number\">UKPRN</abbr>: 10033260"}
+      },
+      {
+        key: {html: '<abbr title="Early Career Framework">ECF</abbr> Status'},
+        value: {html: govukTag({text: "Registered but no invites", classes: "govuk-tag--green"})}
+      },
+      {
+        key: {text: "Characteristics"},
+        value: {text: "None "}
+      },
+      {
+        key: {text: "Phase of education"},
+        value: {text: "Primary"}
+      },
+      {
+        key: {text: "Type of school"},
+        value: {text: "Other"}
+      }
+
+    ]
+    }) }}
+  {{ govukButton({text: "Invite school", href: "./assign"}) }}
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+</div>
+
+<!--School 5-->
+
+<div>
+  <h4 class="govuk-heading-m">
+    Henbury View First School
+  </h4>
+
+  {{ govukSummaryList({
+    classes: 'govuk-summary-list--no-border',
+    rows: [
+      {
+        key: {text: "Address"},
+        value: {html: "Hillside Road, Corfe Mullen, Wimborne, Dorset,<br/>BH21 3TR"}
+      },
+      {
+        key: {text: "Local authority"},
+        value: {text: "Bournemouth, Christchurch and Poole (839)"}
+      },
+      {
+        key: {text: "ID"},
+        value: {html: "<abbr title=\"Unique Reference Number\">URN</abbr>: 136574, DfE number: 839/5410<br><abbr title=\"UK Provider Reference Number\">UKPRN</abbr>: 10033260"}
+      },
+      {
+        key: {html: '<abbr title="Early Career Framework">ECF</abbr> Status'},
+        value: {html: govukTag({text: "Not responded to any", classes: "govuk-tag--yellow"})}
+      },
+      {
+        key: {text: "Characteristics"},
+        value: {text: "Pupil premium above 40% "}
+      },
+      {
+        key: {text: "Phase of education"},
+        value: {text: "Primary"}
+      },
+      {
+        key: {text: "Type of school"},
+        value: {text: "Other"}
+      }
+
+    ]
+    }) }}
+  {{ govukButton({text: "Invite school", href: "./assign"}) }}
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+</div>
+
+
+
+<!--School 6-->
+
+<div>
+  <h4 class="govuk-heading-m">
+    Broadstone Middle School
+  </h4>
+
+  {{ govukSummaryList({
+    classes: 'govuk-summary-list--no-border',
+    rows: [
+      {
+        key: {text: "Address"},
+        value: {html: "Dunyeats Road, Broadstone, Dorset,<br/>BH18 8AE"}
+      },
+      {
+        key: {text: "Local authority"},
+        value: {text: "Bournemouth, Christchurch and Poole (839)"}
+      },
+      {
+        key: {text: "ID"},
+        value: {html: "<abbr title=\"Unique Reference Number\">URN</abbr>: 136574, DfE number: 839/5410<br><abbr title=\"UK Provider Reference Number\">UKPRN</abbr>: 10033260"}
+      },
+      {
+        key: {html: '<abbr title="Early Career Framework">ECF</abbr> Status'},
+        value: {html: govukTag({text: "Not yet registered", classes: "govuk-tag--grey"})}
+      },
+      {
+        key: {text: "Characteristics"},
+        value: {text: "None"}
+      },
+      {
+        key: {text: "Phase of education"},
+        value: {text: "Middle"}
+      },
+      {
+        key: {text: "Type of school"},
+        value: {text: "Academy converter"}
+      }
+
+    ]
+    }) }}
+  {{ govukButton({text: "Invite school", href: "./assign"}) }}
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  {% endblock %}

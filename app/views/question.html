@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <form class="form" action="./bulk-confirm" method="post">
+
+        <div class="govuk-form-group">
+
+  <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="invite-text">
+      Write text for bulk invite
+    </label>
+  </h1>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <p><strong>Email subject:</strong><i> Invitation from Upward Learning and {{ data['bulk-delivery-partner'] }} to join the Early Career Framework induction programme </i>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <p><strong>Enter invite text</strong></p>
+  <textarea class="govuk-textarea" id="invite-text" name="invite-text" rows="5" aria-describedby="invite-text-hint"></textarea>
+
+    <label class="govuk-label" for="email">
+      <strong>Email address for replies</strong>
+    </label>
+    <div id="email-hint" class="govuk-hint">
+      Enter the email address where you would like schools to reply to
+    </div>
+    <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+
+
+</div>
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,1 +1,1 @@
-ecf_proto_suppliers
+ecf-proto

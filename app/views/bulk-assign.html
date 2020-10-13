@@ -1,0 +1,105 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  School results | Early Career Framework
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {{ govukBackLink({
+    text: "Back to results",
+    href: "./results"
+  }) }}
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/bulk-invitation" method="post">
+
+        <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Assign bulk invite to a delivery partner
+            </h1>
+          </legend>
+
+    <p class="govuk-body">You can assign this bulk invite to one of the training providers acting as your delivery partner. The name of the delivery partner will appear on the invite after Upward Learning.</p>
+
+  <div class="govuk-radios">
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="bulk-delivery-partner" name="bulk-delivery-partner" type="radio" value="Saffron Walden County High School and Saffron Academy Trust">
+      <label class="govuk-label govuk-radios__label" for="bulk-delivery-partner">
+        Saffron Walden County High School and Saffron Academy Trust
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="bulk-delivery-partner-2" name="bulk-delivery-partner" type="radio" value="Blue Post Learning Trust">
+      <label class="govuk-label govuk-radios__label" for="bulk-delivery-partner-2">
+        Blue Post Learning Trust
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="bulk-delivery-partner-3" name="bulk-delivery-partner" type="radio" value="Agreed Academies Trust">
+      <label class="govuk-label govuk-radios__label" for="bulk-delivery-partner-3">
+        Agreed Academies Trust
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="bulk-delivery-partner-4" name="bulk-delivery-partner" type="radio" value="Moffat Education Trust">
+      <label class="govuk-label govuk-radios__label" for="bulk-delivery-partner-4">
+        Moffat Education Trust
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="bulk-delivery-partner-5" name="bulk-delivery-partner" type="radio" value="Clarion Federation">
+      <label class="govuk-label govuk-radios__label" for="bulk-delivery-partner-5">
+        Clarion Federation
+      </label>
+    </div>
+    <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="bulk-delivery-partner-6" name="bulk-delivery-partner" type="radio" value="Old Harry Federation">
+      <label class="govuk-label govuk-radios__label" for="bulk-delivery-partner-6">
+        Old Harry Federation
+      </label>
+    </div>
+    <div class="govuk-radios__divider">or</div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="bulk-delivery-partner-7" name="bulk-delivery-partner" type="radio" value="Unassigned">
+        <label class="govuk-label govuk-radios__label" for="bulk-delivery-partner-7">
+          Skip this step for now
+        </label>
+      </div>
+  </div>
+
+</fieldset>
+
+
+
+
+</div>
+
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

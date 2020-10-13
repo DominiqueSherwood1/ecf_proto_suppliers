@@ -1,0 +1,151 @@
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Invite School | Early Career Framework
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+  {{ govukBackLink({
+    text: "Back to Dashboard",
+    href: "../dashboard_sup"
+  }) }}
+{% endblock %}
+
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form action="./results" method="POST">
+        {% set schoolNameHTML %}
+    {{ govukInput({
+      id: "school-name",
+      name: "school-name",
+      type: "text",
+      spellcheck: false,
+      classes: "govuk-!-width-20",
+      label: {
+        text: "For example, Aston Academy"
+      }
+    }) }}
+    {% endset -%}
+
+
+    {% set localAuthorityHTML %}
+    {{ govukInput({
+    id: "local-authority",
+    name: "local-authority",
+    type: "text",
+    spellcheck: false,
+    classes: "govuk-!-width-20",
+    label: {
+    text: "Enter the name of the local authority"
+    }
+    }) }}
+    {% endset -%}
+
+
+    {% set locationHtml %}
+{{ govukInput({
+  id: "location",
+  name: "location",
+  type: "type",
+  spellcheck: false,
+  classes: "govuk-!-width-20",
+  label: {
+    text: "Enter postcode, town or city"
+  }
+}) }}
+{% endset -%}
+
+
+{% set networkHtml %}
+{{ govukInput({
+id: "network",
+name: "network",
+type: "text",
+spellcheck: false,
+classes: "govuk-!-width-20",
+label: {
+text: "Enter your..."
+}
+}) }}
+{% endset -%}
+
+
+
+
+
+
+
+    {{ govukRadios({
+      idPrefix: "search-schools",
+      name: "search-schools",
+      fieldset: {
+        legend: {
+          text: "Find schools to invite",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "Find schools to invite to work with Upwards Learning.
+        You can invite schools individually or in a group. Select which type of search you want"
+      },
+      items: [
+        {
+          value: "school-name",
+          text: "School name",
+          conditional: {
+            html:schoolNameHTML
+          }
+        },
+        {
+          value: "local-authority",
+          text: "Local authority",
+          conditional: {
+            html:localAuthorityHTML
+          }
+        },
+        {
+          value: "location",
+          text: "Location",
+          conditional: {
+            html: locationHtml
+          }
+        },
+        {
+          value: "network",
+          text: "Network",
+          conditional: {
+            html: networkHtml
+          }
+        },
+        {
+      divider: "or"
+    },
+        {
+          value: "all-establishments",
+          text: "All establishments",
+          conditional: {
+            html: allEstablishmentsHtml
+          }
+        }
+      ]
+    }) }}
+
+      {{ govukButton({text: "Search"}) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
