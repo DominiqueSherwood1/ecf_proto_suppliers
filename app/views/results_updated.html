@@ -152,108 +152,31 @@
     </div>
     <div class="govuk-grid-column-two-thirds">
 
+      <h4 class="govuk-heading-m">St. Aldhelm's Academy</h4>
+      <p>Herbert Avenue, Poole, Dorset, BH12 4HS<br>
+      URN: 136574, DfE number: 839/5410<br>
+      Local authority: Bournemouth, Christchurch and Poole<br>
+      ECF Status: <strong class="govuk-tag govuk-tag--yellow">Not responded to any</strong><br>
+      Pupil premium above 40%<br>
+      Secondary<br>
+      Academy converter</p>
 
-<!--School 1-->
+      {{ govukButton({text: "Invite school", href: "./assign"}) }}
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+      <h4 class="govuk-heading-m">Henbury View First School</h4>
+      <p>Hillside Road, Corfe Mullen, Wimborne, Dorset,BH21 3TR<br>
+      URN: 136574, DfE number: 839/5410<br>
+      Local authority: Bournemouth, Christchurch and Poole<br>
+      ECF Status: <strong class="govuk-tag govuk-tag--yellow">Not responded to any</strong><br>
+      Pupil premium above 40%<br>
+      Primary<br>
+      Academy converter</p>
 
-
-<!--School 2-->
-
-<!--School 3-->
-
-<div>
-  <h4 class="govuk-heading-m">
-    St. Aldhelm's Academy
-  </h4>
-
-  {{ govukSummaryList({
-    classes: 'govuk-summary-list--no-border',
-    rows: [
-      {
-        key: {text: "Address"},
-        value: {html: "Herbert Avenue, Poole, Dorset, <br/>BH12 4HS"}
-      },
-      {
-        key: {text: "Local authority"},
-        value: {text: "Bournemouth, Christchurch and Poole (839)"}
-      },
-      {
-        key: {text: "ID"},
-        value: {html: "<abbr title=\"Unique Reference Number\">URN</abbr>: 136574, DfE number: 839/5410<br><abbr title=\"UK Provider Reference Number\">UKPRN</abbr>: 10033260"}
-      },
-      {
-        key: {html: '<abbr title="Early Career Framework">ECF</abbr> Status'},
-        value: {html: govukTag({text: "Not responded to any", classes: "govuk-tag--yellow"})}
-      },
-      {
-        key: {text: "Characteristics"},
-        value: {text: "Pupil premium above 40% "}
-      },
-      {
-        key: {text: "Phase of education"},
-        value: {text: "Secondary"}
-      },
-      {
-        key: {text: "Type of school"},
-        value: {text: "Academy converter"}
-      }
-
-    ]
-    }) }}
-  {{ govukButton({text: "Invite school", href: "./assign"}) }}
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-</div>
-
-<!--School 4-->
-
-<!--School 5-->
-
-<div>
-  <h4 class="govuk-heading-m">
-    Henbury View First School
-  </h4>
-
-  {{ govukSummaryList({
-    classes: 'govuk-summary-list--no-border',
-    rows: [
-      {
-        key: {text: "Address"},
-        value: {html: "Hillside Road, Corfe Mullen, Wimborne, Dorset,<br/>BH21 3TR"}
-      },
-      {
-        key: {text: "Local authority"},
-        value: {text: "Bournemouth, Christchurch and Poole (839)"}
-      },
-      {
-        key: {text: "ID"},
-        value: {html: "<abbr title=\"Unique Reference Number\">URN</abbr>: 136574, DfE number: 839/5410<br><abbr title=\"UK Provider Reference Number\">UKPRN</abbr>: 10033260"}
-      },
-      {
-        key: {html: '<abbr title="Early Career Framework">ECF</abbr> Status'},
-        value: {html: govukTag({text: "Not responded to any", classes: "govuk-tag--yellow"})}
-      },
-      {
-        key: {text: "Characteristics"},
-        value: {text: "Pupil premium above 40% "}
-      },
-      {
-        key: {text: "Phase of education"},
-        value: {text: "Primary"}
-      },
-      {
-        key: {text: "Type of school"},
-        value: {text: "Other"}
-      }
-
-    ]
-    }) }}
-  {{ govukButton({text: "Invite school", href: "./assign"}) }}
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-</div>
+      {{ govukButton({text: "Invite school", href: "./assign"}) }}
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
-
-<!--School 6-->
 
 
 
