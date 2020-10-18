@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-l">Find schools to invite</h2>
+
+      <p>You can invite schools individually or in a group. First, select one option to search from</p>
+
+      <form class="form" action="/it-two-b/find-school-answer" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="find-school-hint">
+
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="find-school" name="find-school" type="radio" value="school" data-aria-controls="conditional-find-school">
+        <label class="govuk-label govuk-radios__label" for="find-school">
+          School
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-find-school">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="find-school-by-school">
+            By school name, URN or postcode
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="find-school-by-school" name="find-school-by-school" type="by-school" spellcheck="false"></div>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="find-school-2" name="find-school" type="radio" value="network" data-aria-controls="conditional-find-school-2">
+        <label class="govuk-label govuk-radios__label" for="find-school-2">
+          By network - e.g a name of a trust or teaching school hub
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-find-school-2">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="find-school-by-network">
+            Start entering the name of the network
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="find-school-by-network" name="find-school-by-network" type="by-network"></div>
+
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="find-school-3" name="find-school" type="radio" value="local-authority" data-aria-controls="conditional-find-school-3">
+        <label class="govuk-label govuk-radios__label" for="find-school-3">
+          By local authority
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-find-school-3">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="find-school-by-local-authority">
+            Start entering the name of the local authority
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="find-school-by-local-authority" name="find-school-by-local-authority" type="by-authority"></div>
+
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="find-school-4" name="find-school" type="radio" value="georgraphy" data-aria-controls="conditional-find-school-4">
+        <label class="govuk-label govuk-radios__label" for="find-school-4">
+          By georgraphy
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-find-school-4">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="find-school-by-georgraphy">
+            Start entering the postcode or place name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="find-school-by-georgraphy" name="find-school-by-georgraphy" type="by-geography"></div>
+      </div>
+      <div class="govuk-radios__divider">or</div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="find-school-5" name="find-school" type="radio" value="all-schools" data-aria-controls="conditional-find-school-5">
+        <label class="govuk-label govuk-radios__label" for="find-school-5">
+          Search by all schools
+        </label>
+      </div>
+
+    </div>
+
+  </fieldset>
+</div>
+
+  <button class="govuk-button" data-module="govuk-button">Search</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

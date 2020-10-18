@@ -20,5 +20,22 @@ router.post('/it-two/find-school-answer', function (req, res) {
 
 })
 
+router.post('/it-two-b/find-school-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var findSchools = req.session.data['find-school']
+
+  // Check whether the variable matches a condition
+  if (findSchools == "network") {
+    // Send user to next page
+    res.redirect('/it-two-b/confirm-list')
+  }
+  else {
+    // Send user to ineligible page
+    res.redirect('/results')
+  }
+
+})
+
 
 module.exports = router

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/url/of/previous/page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <form class="form" action="/it-two-b/invitations-text" method="post">
+
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="send-invite-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        How do you want to send the invites?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="send-invite" name="send-invite" type="radio" value="bulk-invite" aria-describedby="send-invite-item-hint">
+        <label class="govuk-label govuk-radios__label" for="send-invite">
+          Send as a bulk invite
+        </label>
+        <div id="send-invite-item-hint" class="govuk-hint govuk-radios__hint">
+          The message for each school will be the same, with the individual name included.
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="send-invite-2" name="send-invite" type="radio" value="bespoke" aria-describedby="send-invite-2-item-hint">
+        <label class="govuk-label govuk-radios__label" for="send-invite-2">
+          Send each school a bespoke message
+        </label>
+        <div id="send-invite-2-item-hint" class="govuk-hint govuk-radios__hint">
+          You can send each school variations of your invite template.
+        </div>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
