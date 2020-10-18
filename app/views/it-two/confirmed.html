@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  School invited | Early Career Framework
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+	  {{ govukPanel({
+		titleText: "Invitation sent"
+	  }) }}
+
+    <p class="govuk-body">Invite sent to {{ data['school-name'] }} {school name} </p>
+
+    <p>You can now return to invite other schools from the network list or save the list to come back to another time.</p>
+
+	  {{ govukButton({text: "Invite other schools", href:"/it-two/refine_list_search"}) }} {{ govukButton({text: "Save list and exit", classes: "govuk-button--secondary", href:"/it-two/dashboard_sup"}) }}
+  </div>
+</div>
+{% endblock %}
