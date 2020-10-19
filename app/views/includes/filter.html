@@ -1,0 +1,136 @@
+{%- from "moj/components/filter/macro.njk" import mojFilter -%}
+
+{%- set filterOptionsHtml %}
+  {{ govukCheckboxes({
+    fieldset: {
+      legend: {
+        text: "Registration status",
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    classes: "govuk-checkboxes--small",
+    items: [
+      {
+        value: "Not yet registered",
+        text: "Not yet registered"
+      },
+      {
+        value: "School is registered but has no invites",
+        text: "School is registered but has no invites"
+      },
+      {
+        value: "School not responded to any providers",
+        text: "School not responded to any providers"
+      },
+      {
+        value: "School has responded to other providers",
+        text: "School has responded to other providers"
+      }
+    ]
+  }) }}
+
+  {{ govukCheckboxes({
+    fieldset: {
+      legend: {
+        text: "Characteristics",
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    classes: "govuk-checkboxes--small",
+    items: [
+      {
+        value: "Pupil premium above 40%",
+        text: "Pupil premium above 40%"
+      },
+      {
+        value: "School in a remote area",
+        text: "School in a remote area"
+      }
+
+    ]
+  }) }}
+
+{{ govukCheckboxes({
+    fieldset: {
+      legend: {
+        text: "Phase",
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    classes: "govuk-checkboxes--small",
+    items: [
+      {
+        value: "Nursery",
+        text: "Nursery"
+      },
+      {
+        value: "Primary",
+        text: "Primary"
+      },
+      {
+        value: "Secondary",
+        text: "Secondary"
+      },
+      {
+        value: "Middle",
+        text: "Middle"
+      },
+      {
+        value: "Sixth form and FE",
+        text: "Sixth form and FE"
+      }
+    ]
+  }) }}
+
+{{ govukCheckboxes({
+    fieldset: {
+      legend: {
+        text: "Type of school",
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    classes: "govuk-checkboxes--small",
+    items: [
+      {
+        value: "Academy",
+        text: "Academy"
+      },
+      {
+        value: "Maintained",
+        text: "Maintained"
+      },
+      {
+        value: "Free school",
+        text: "Free school"
+      },
+      {
+        value: "Special",
+        text: "Special"
+      },
+      {
+        value: "Other",
+        text: "Other"
+      }
+    ]
+  }) }}
+{% endset -%}
+
+<form action="./results_updated">
+  {{ mojFilter({
+    heading: {text: "Filter results"},
+    selectedFilters: {
+      heading: {text: "Selected filters"},
+      clearLink: {text: "Clear"},
+      categories: [
+        {
+          heading: {text:"Registration status"},
+          items: [
+            {href: "#", text: "School not responded to any providers"},
+            {href: "#", text: "Not yet registered"}
+          ]
+        }
+      ]
+    },
+    optionsHtml: filterOptionsHtml
+  })}}
+</form>
