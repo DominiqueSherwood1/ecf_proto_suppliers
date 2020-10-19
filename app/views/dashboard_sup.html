@@ -17,7 +17,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">Admin dashboard for Upwards Learning</h1>
-      <ul class="govuk-tabs__list">
+      <ul class="govuk-tabs__list govuk-!-margin-bottom-4">
         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
           <a class="govuk-tabs__tab" href="#past-day">Schools</a>
         </li>
@@ -35,7 +35,6 @@
       <h2 class="govuk-heading-m">Invite Schools</h2>
 
       <p>Find schools or groups of schools to invite individually or bulk-invite. Alternatively you can upload your own selected group of schools to invite.</p>
-
 
       {{ govukButton({text: "Invite Schools", href: "/new"}) }}{{ govukButton({text: "Upload School group", href: "/upload"}) }}
 
