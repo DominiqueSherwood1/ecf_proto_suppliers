@@ -36,57 +36,59 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <div class="govuk-inset-text">
+        Upload successful
+      </div>
 
       <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="school-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                  Select which schools from {{ data['find-school-by-network'] }} you want to invite.
-                </h1>
-            </legend>
-            <div id="school-hint" class="govuk-hint">
-              You can invite schools from this list one-by-one or as a group. If you want to refine this list you can <a href="/it-two/results-mat">update your search criteria</a>
-            </div>
-
+  <fieldset class="govuk-fieldset" aria-describedby="school-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Confirm which schools you want to invite.
+      </h1>
+    </legend>
+    <div id="school-hint" class="govuk-hint">
+      Select all schools that you want to invite
+    </div>
     <p><a href="#">Select all</a></p>
-
     <div class="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="school" name="school-name" type="checkbox" value="one">
+        <input class="govuk-checkboxes__input" id="school" name="school" type="checkbox" value="one">
         <label class="govuk-label govuk-checkboxes__label" for="school">
           Corfe Hills Schools
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="school-2" name="school-name" type="checkbox" value="two">
+        <input class="govuk-checkboxes__input" id="school-2" name="school" type="checkbox" value="two">
         <label class="govuk-label govuk-checkboxes__label" for="school-2">
           Avonbourne Boys' Academy
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="school-3" name="school-name" type="checkbox" value="three">
+        <input class="govuk-checkboxes__input" id="school-3" name="school" type="checkbox" value="three">
         <label class="govuk-label govuk-checkboxes__label" for="school-3">
           St. Aldhelm's Academy
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="school-4" name="school-name" type="checkbox" value="four">
+        <input class="govuk-checkboxes__input" id="school-4" name="school" type="checkbox" value="four">
         <label class="govuk-label govuk-checkboxes__label" for="school-4">
           Rushcome First School
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="school-5" name="school-name" type="checkbox" value="five">
+        <input class="govuk-checkboxes__input" id="school-5" name="school" type="checkbox" value="five">
         <label class="govuk-label govuk-checkboxes__label" for="school-5">
           Henbury View First School
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="school-6" name="school-name" type="checkbox" value="six">
+        <input class="govuk-checkboxes__input" id="school-6" name="school" type="checkbox" value="six">
         <label class="govuk-label govuk-checkboxes__label" for="school-6">
           Broadstone Middle School
         </label>
       </div>
+
 
 
 
@@ -98,7 +100,7 @@
 
 
 
-      {{ govukButton({text: "Continue", href: "/it-two/mat-assign"}) }}
+      {{ govukButton({text: "Continue", href: "./upload-assign"}) }}
 
     </div>
   </div>

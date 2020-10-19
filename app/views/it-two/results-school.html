@@ -21,7 +21,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Search results</h1>
-      <h3 class="govuk-heading-s">We've found 1 school matching "Corfe Hills School" </h3>
+      <h3 class="govuk-heading-s">We've found 1 school matching {{ data['find-school-by-school'] }} </h3>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <p><strong>Create bulk invite</strong><br>
         You can create a group invite list to send to the schools listed in these results.</p>
@@ -31,7 +31,7 @@
     <div class="govuk-grid-column-one-third">
 
 
-        <h4 class="govuk-heading-s">Filter results</h4>
+        <h3 class="govuk-heading-m">Filter results</h3>
         {{ govukCheckboxes({
           fieldset: {
             legend: {
