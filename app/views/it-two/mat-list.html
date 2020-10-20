@@ -50,6 +50,8 @@
 
     <p><a href="#">Select all</a></p>
 
+    <form class="form" action="/it-two/mat-assign" method="post">
+
     <div class="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="school" name="school-name" type="checkbox" value="Corfe Hills School"> {{ checked("school-name", "Corfe Hills School") }}
@@ -64,38 +66,38 @@
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="school-3" name="school-name" type="checkbox" value="three">
+        <input class="govuk-checkboxes__input" id="school-3" name="school-name" type="checkbox" value="St. Aldhelm's Academy"> {{ checked("school-name", "St. Aldhelm's Academy' Academy") }}
         <label class="govuk-label govuk-checkboxes__label" for="school-3">
           St. Aldhelm's Academy
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="school-4" name="school-name" type="checkbox" value="four">
+        <input class="govuk-checkboxes__input" id="school-4" name="school-name" type="checkbox" value="Rushcombe First School"> {{ checked("school-name", "Rushcome First School") }}
         <label class="govuk-label govuk-checkboxes__label" for="school-4">
           Rushcome First School
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="school-5" name="school-name" type="checkbox" value="five">
+        <input class="govuk-checkboxes__input" id="school-5" name="school-name" type="checkbox" value="Henbury View First School"> {{ checked("school-name", "Henbury View First School") }}
         <label class="govuk-label govuk-checkboxes__label" for="school-5">
           Henbury View First School
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="school-6" name="school-name" type="checkbox" value="six">
+        <input class="govuk-checkboxes__input" id="school-6" name="school-name" type="checkbox" value="Broadstone Middle School"> {{ checked("school-name", "Broadstone Middle School") }}
         <label class="govuk-label govuk-checkboxes__label" for="school-6">
           Broadstone Middle School
         </label>
       </div>
     </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+    <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+</form>
 
   </fieldset>
 </div>
 
-
-
-
-      {{ govukButton({text: "Continue", href: "/it-two/mat-assign"}) }}
 
     </div>
   </div>

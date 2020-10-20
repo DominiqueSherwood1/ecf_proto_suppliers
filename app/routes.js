@@ -13,11 +13,17 @@ router.post('/it-two/find-school-answer', function (req, res) {
     // Send user to next page
     res.redirect('/it-two/mat-list')
   }
+  else if (findSchools == "school-name") {
+    // Send user to next page
+    res.redirect('/it-two/results-school')
+}
   else {
     // Send user to ineligible page
-    res.redirect('/it-two/results-school')
+    res.redirect('/it-two/results-la')
   }
 
 })
+
+
 
 module.exports = router
